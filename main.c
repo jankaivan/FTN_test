@@ -5,10 +5,10 @@
 const uint16_t LED_uptime = 500;
 const uint16_t LED_downtime = 300;
 
+void ledInit()
+
 uint8_t main()
 {	
-	DDRB |= (1 << 5);
-
 	while (1)
 	{
 		PORTB |= (1 << 5);
@@ -17,4 +17,9 @@ uint8_t main()
 		_delay_ms(LED_downtime);
 	}
 	return 0;
+}
+
+void ledInit()
+{
+	DDRB |= (1 << 5);
 }
